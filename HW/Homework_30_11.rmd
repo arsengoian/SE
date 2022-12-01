@@ -3,14 +3,23 @@ title: "R Notebook"
 output: html_document
 ---
 
+We'll need some libraries...
+
+```{r,warning=FALSE,message=FALSE}
+
+pacman::p_load(haven, purrr, knitr)
+
+# I gave up, let's just use tidyverse for everything else
+library(tidyverse)
+
+```
+
 ### Question 1
 #### 1a
 
 Let us import the dataset and discover the necessary columns
 
 ```{r}
-
-pacman::p_load(haven, dbplyr, purrr, knitr)
 
 DISCRIM <- read_stata("http://fmwww.bc.edu/ec-p/data/wooldridge/discrim.dta")
 
@@ -48,6 +57,17 @@ kable(data.frame(
 Thus, we can conclude that these variables have quite large deviations
 
 #### 1b
+
+
 ```{r}
+my_data <- as_tibble(DISCRIM)
+variables <- (my_data
+  %>% select(pentree, prpblck, income, lincome, prppov, lhseval)
+  %>% filter(!is.na(pentree) & !is.na(prpblck))) # Apparently two of these is enough
+
+  cor(variables)
 
 ```
+
+#### 2
+
