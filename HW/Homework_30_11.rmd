@@ -1,6 +1,6 @@
 ---
 title: "R Notebook"
-output: html_document
+output: github_document
 ---
 
 We'll need some libraries...
