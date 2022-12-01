@@ -15,7 +15,7 @@ library(tidyverse)
 ```
 
 ### Question 1
-#### 1a
+#### ia
 
 Let us import the dataset and discover the necessary columns
 
@@ -56,7 +56,7 @@ kable(data.frame(
 
 Thus, we can conclude that these variables have quite large deviations
 
-#### 1b
+#### ib
 
 
 ```{r}
@@ -69,5 +69,6 @@ variables <- (my_data
 
 ```
 
-#### 2
+#### ii
 
+(...is being updated)
